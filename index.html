@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/btclive/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitForecast: Next-Hour Price Predictor</title>
+    <meta name="description" content="Bitcoin price predictions for the next few hours, powered by machine learning models.">
+    <meta name="keywords" content="Bitcoin price predictions, machine learning models, real-time market data, cryptocurrency" forecasting" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'IBM Plex Mono', monospace;
+            background-color: #FFFFFF;
+            color: #000000;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Scanline effect */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                transparent 50%,
+                rgba(0, 0, 0, 0.03) 50%
+            );
+            background-size: 100% 4px;
+            animation: scanlines 10s linear infinite;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        /* Blinking cursor after title */
+        .title::after {
+            content: '_';
+            position: absolute;
+            opacity: 1;
+            animation: cursor 1s infinite;
+        }
+
+        .links-container {
+            padding-left: 40px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin: 0;
+            padding: 0;
+            color: #000000;
+        }
+
+        li {
+            margin: 15px 0;
+            list-style-position: outside;
+            padding-left: 10px;
+        }
+
+        a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 18px;
+            transition: all 0.2s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        a:hover {
+            color: #666666;
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes cursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        @keyframes scanlines {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(4px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="title">BitForecast: </div>
+        
+        <div class="links-container">
+            <ul>
+                <li><a href="https://magpiemckh.github.io/btclive/" target="_blank">Bitcoin price predictions: https://magpiemckh.github.io/btclive/</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
